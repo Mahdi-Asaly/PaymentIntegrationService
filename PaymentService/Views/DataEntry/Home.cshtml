@@ -1,0 +1,53 @@
+﻿@model PaymentService.Models.transactions
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    *{
+        text-align:center;
+    }
+    .container-fluid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+        align-items: stretch;
+        margin: 20px;
+    }
+    .p-1{
+        padding:5px;
+    }
+</style>
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Please Choose Payment Method</h2>
+    <div class="container-fluid">
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("HostedPagePayment", "DataEntry")";' class="btn-success btn-lg">Hosted Page Payment</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("ACH_SilentPost", "DataEntry")";' class="btn-danger btn-lg">ACH / ECHECK - SILENT POST</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("Index", "DataEntry")";' class="btn-warning btn-lg">Silent Post Page</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("Refund_Request_SP", "DataEntry")";' class="btn-primary btn-lg">Refund Request</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("StoringCC", "DataEntry")";' class="btn-default btn-lg">STORING CREDIT CARDS</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("Refund_SilentPost", "DataEntry")";' class="btn-default btn-lg">Refund - SP</button>
+        </div>
+        <div class="p-1">
+            <button type="button" onclick='window.location = "@Url.Action("Recurring", "DataEntry")";' class="btn-danger btn-lg">Recurring</button>
+        </div>
+    </div>
+</body>
+</html>

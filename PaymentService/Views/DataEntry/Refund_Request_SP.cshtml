@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Refund_Request_SP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        /* FONT-WEIGHT: 400; */
+        max-width: 1200px;
+    }
+
+    body {
+        background-color: white;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2 style="text-align:center;font-family:Georgia, 'Times New Roman', Times, serif;">Refund Request - SP</h2>
+    <h3>Request URL</h3>
+    <textarea disabled rows="3" cols="200">
+    @TempData["WebRequestHPP"]
+    </textarea>
+    <h3>Result HTML Response</h3>
+    <textarea disabled rows="40" cols="200">
+    @TempData["ResultHTML"]
+    </textarea>
+</body>
+</html>
+

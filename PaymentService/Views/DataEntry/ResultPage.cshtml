@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "ResultPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body{
+        background-color:black;
+    }
+    body>*{
+        color:white;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Final Result</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <b style="color:Highlight">Request</b><br />
+        <input type="text" id="req" name="req" size="100" style="color:black; max-width:1000px;" value="@TempData["request"].ToString()"><br>
+    </div>
+    <div class="container-fluid">
+        <b style="color:Highlight">Response</b> <br />
+        <input type="text" id="response" size="100" name="response" style="color:black;max-width:1000px;" value="@TempData["response"].ToString()"><br>
+    </div>
+    <br />
+    <div style="color:coral; text-align:center; font-size:24px;">
+        @if (TempData["Result"].ToString() == "SUCCESS")
+        {
+            <div>Payment has been Approved Congratz! CODE:@TempData["Code"]</div>
+        }
+        else if (TempData["Result"].ToString() == "STILL")
+        {
+            <div>Transaction still in processing mode CODE:@TempData["Code"]</div>
+        }
+
+        else if (TempData["Result"].ToString() == "PENDING")
+        {
+            <div>Payment is pending CODE:@TempData["Code"]</div>
+        }
+        else if (TempData["Result"].ToString() == "INVALIDCARD")
+        {
+            <div>Invalid card , payment failed. CODE:@TempData["Code"]</div>
+        }
+        else if (TempData["Result"].ToString() == "OTHER")
+        {
+            <div>Payment failed.</div>
+        }
+        else if (TempData["Result"].ToString() == "EXCEED")
+        {
+            <div>You reached out the maximum tryings ,try later! CODE:@TempData["Code"]</div>
+        }
+    </div>
+</body>
+</html>
+
+
+
+
+
+
